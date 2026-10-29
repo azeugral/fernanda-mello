@@ -32,7 +32,7 @@ Ao mudar CSS, JS ou vídeo, subir o `?v=` nas páginas.
 
 ## CONFIRMAR antes do domínio
 
-- [ ] **Unhas**: o pedido falou em nail designer, mas o perfil e o catálogo são de lash designer (cílios e sobrancelhas). O post "Nail & Lash Designer" mostra a **Fantay** fazendo unhas no mesmo espaço; o site cita isso numa frase do "Sobre". Ela quer uma seção de unhas (com serviços e valores da Fantay) ou é só a menção?
+- [x] **Unhas**: decidido em 28/10 que fica só a menção à Fantay (unhas no mesmo espaço) no "Sobre", sem seção própria.
 - [ ] **Fotos dos estilos Classic e Sirena**: vieram do catálogo do Canva (baixa resolução). As outras são do Instagram, escolhidas pela legenda. Confirmar se cada foto mostra mesmo o estilo do cartão.
 - [ ] **Spikes Fox**: post de 22/09 diz "disponível no catálogo", mas o catálogo do Canva não tem esse estilo nem valor.
 - [ ] **Valores**: copiados do catálogo do Canva (out/2026). Conferir se continuam valendo.
