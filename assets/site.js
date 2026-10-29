@@ -131,6 +131,23 @@
     revelaveis.forEach(el => io.observe(el));
   } else revelaveis.forEach(el => el.classList.add("visto"));
 
+  // estilos no celular: pontos que acompanham o carrossel
+  const trilho = document.querySelector(".estilos");
+  const pontos = document.querySelector(".estilos__pontos");
+  if (trilho && pontos) {
+    const cartoes = [...trilho.children];
+    pontos.innerHTML = cartoes.map(() => "<i></i>").join("");
+    const marcas = [...pontos.children];
+    const marcar = () => {
+      const meio = trilho.scrollLeft + trilho.clientWidth / 2;
+      let atual = 0;
+      cartoes.forEach((c, i) => { if (Math.abs(c.offsetLeft + c.offsetWidth / 2 - meio) < Math.abs(cartoes[atual].offsetLeft + cartoes[atual].offsetWidth / 2 - meio)) atual = i; });
+      marcas.forEach((m, i) => m.classList.toggle("on", i === atual));
+    };
+    trilho.addEventListener("scroll", () => requestAnimationFrame(marcar), { passive: true });
+    marcar();
+  }
+
   // filtros da página de trabalhos
   const filtros = document.querySelectorAll(".filtros button");
   const trabs = [...document.querySelectorAll(".trab")];

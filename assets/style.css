@@ -160,6 +160,7 @@ p { margin: 0 0 1em; }
   transition: color .3s var(--curva), border-color .3s var(--curva);
 }
 .estilo__pedir:hover { color: var(--rosa); border-color: var(--rosa); }
+.estilos__nav { display: none; }
 
 /* manutenção */
 .manutencao { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(40px, 6vw, 88px); align-items: center; }
@@ -328,17 +329,30 @@ p { margin: 0 0 1em; }
   .agendar__fios { display: none; }
 }
 @media (max-width: 700px) {
-  .estilos { grid-template-columns: 1fr; gap: 64px; }
-  .estilo { grid-template-columns: 40% 1fr; gap: 20px; }
+  /* estilos no celular: carrossel de deslizar, o proximo cartao aparece na borda */
+  .estilos {
+    display: flex; gap: 14px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none;
+    margin-inline: calc(50% - 50vw); padding: 2px calc(50vw - 50%) 4px; scroll-padding-inline: calc(50vw - 50%);
+  }
+  .estilos::-webkit-scrollbar { display: none; }
+  .estilo { display: flex; flex-direction: column; flex: 0 0 min(80%, 330px); scroll-snap-align: center; border: 1px solid var(--linha); padding: 18px 16px 12px; background: rgba(255, 255, 255, .015); }
+  .js .estilos .revela { opacity: 1; transform: none; }
+  .estilo__foto { width: 50%; align-self: center; margin: 0 0 14px; padding: 4px; }
+  .estilo__corpo { text-align: center; }
+  .estilo__sub { margin: 4px 0 8px; }
+  .estilo__corpo > p:not([class]) { font-size: .88rem; line-height: 1.5; margin: 0 0 4px; }
+  .estilo__pedir { align-self: center; padding: 8px 0; }
+  .estilos__nav { display: flex; flex-direction: column-reverse; align-items: center; gap: 8px; margin-top: 18px; }
+  .estilos__dica { font-size: .8rem; color: var(--suave); letter-spacing: .04em; }
+  .estilos__pontos { display: flex; gap: 7px; }
+  .estilos__pontos i { width: 6px; height: 6px; background: var(--linha-forte); transform: rotate(45deg); transition: background .3s var(--curva); }
+  .estilos__pontos i.on { background: var(--rosa); }
+  #estilos .cabeca { margin-bottom: 28px; }
 }
 @media (max-width: 480px) {
   body { font-size: 1rem; }
   .caixa, .caixa--estreita { width: calc(100% - 32px); }
   .marca__nome { display: none; }
-  .estilo { display: flex; }
-  .estilo__foto { width: 64%; align-self: center; margin-bottom: 22px; }
-  .estilo__corpo { text-align: center; }
-  .estilo__pedir { align-self: center; }
   .hero__acoes { flex-direction: column; width: 100%; }
   .hero__acoes .btn { width: 100%; }
   .hero__selos { flex-direction: column; align-items: center; gap: 6px; bottom: 26px; }
