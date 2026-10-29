@@ -120,6 +120,7 @@ p { margin: 0 0 1em; }
 }
 .hero__selos li { display: flex; align-items: center; gap: 10px; }
 .hero__selos li::before { content: ""; width: 5px; height: 5px; background: var(--rosa); transform: rotate(45deg); }
+.hero__selos b { font-weight: 400; color: var(--champanhe); }
 
 /* entrada do hero */
 .js .entra { opacity: 0; transform: translateY(18px); }
@@ -328,6 +329,23 @@ p { margin: 0 0 1em; }
   .agendar__fios { display: none; }
 }
 @media (max-width: 700px) {
+  /* hero do celular: cabe na 1a tela sem esticar, e ja diz preco e onde fica */
+  .hero { min-height: 0; justify-content: flex-start; padding: calc(var(--topo) + 26px) 18px 22px; }
+  .hero__logo { width: min(230px, 58vw); margin-bottom: 16px; }
+  .hero__titulo { font-size: .78rem; letter-spacing: .12em; }
+  .hero__lead { font-size: 1.32rem; margin: 10px 0 20px; }
+  .hero__acoes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; }
+  .hero__acoes .btn { width: 100%; min-height: 48px; padding: 0 10px; font-size: .86rem; }
+  .hero__selos {
+    position: static; margin-top: 22px; padding: 0; width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+    border-block: 1px solid var(--linha-forte); background: rgba(0, 0, 0, .55); font-size: .7rem; letter-spacing: .02em;
+  }
+  .hero__selos li { flex-direction: column; justify-content: center; gap: 2px; padding: 11px 4px; line-height: 1.3; }
+  .hero__selos li + li { border-left: 1px solid var(--linha-forte); }
+  .hero__selos li::before { display: none; }
+  .hero__selos b { font: 500 1.12rem/1.15 var(--serif); }
+  .manifesto { padding-block: 56px; }
+  .manifesto__texto { font-size: 1.32rem; margin-bottom: 14px; }
   .estilos { grid-template-columns: 1fr; gap: 64px; }
   .estilo { grid-template-columns: 40% 1fr; gap: 20px; }
 }
@@ -339,9 +357,6 @@ p { margin: 0 0 1em; }
   .estilo__foto { width: 64%; align-self: center; margin-bottom: 22px; }
   .estilo__corpo { text-align: center; }
   .estilo__pedir { align-self: center; }
-  .hero__acoes { flex-direction: column; width: 100%; }
-  .hero__acoes .btn { width: 100%; }
-  .hero__selos { flex-direction: column; align-items: center; gap: 6px; bottom: 26px; }
   .duas, .campo-duplo { grid-template-columns: 1fr; gap: 16px; }
   .sobrancelhas__fotos { gap: 10px; }
   .sobrancelhas__fotos figure:nth-child(2) { transform: translateY(-20px); }
